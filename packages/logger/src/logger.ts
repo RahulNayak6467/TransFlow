@@ -11,7 +11,7 @@ const isProduction = environment === "production";
     level: (label) => {
       return {severity: label.toUpperCase()}
     }
-  },
+    },
   ...(!isProduction
     ? {
         transport: {

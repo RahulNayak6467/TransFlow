@@ -1,4 +1,7 @@
+import dotenv from "dotenv";
 import { envConfig } from "./schema.js";
+
+dotenv.config();
 
 const parsed = envConfig.safeParse(process.env);
 
