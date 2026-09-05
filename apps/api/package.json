@@ -1,0 +1,25 @@
+{
+  "name": "@transflow/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "start": "node --enable-source-maps dist/server.js"
+  },
+  "dependencies": {
+    "@transflow/config": "workspace:*",
+    "@transflow/db": "workspace:*",
+    "@transflow/logger": "workspace:*",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "pino-http": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "tsx": "4.23.13"
+  }
+}

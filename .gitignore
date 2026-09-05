@@ -1,0 +1,160 @@
+# -----------------------------------------------------------------------------
+# Dependencies and package-manager state
+# -----------------------------------------------------------------------------
+node_modules/
+.pnpm-store/
+
+# Keep the pnpm lockfile committed for reproducible installs.
+!pnpm-lock.yaml
+
+# -----------------------------------------------------------------------------
+# Local project and learning documentation
+# -----------------------------------------------------------------------------
+/docs/
+
+# -----------------------------------------------------------------------------
+# TypeScript / Node.js build output and caches
+# -----------------------------------------------------------------------------
+dist/
+build/
+out/
+*.tsbuildinfo
+.cache/
+.eslintcache
+.prettier-cache
+.vitest/
+
+# Next.js frontend output and local deployment state
+.next/
+.vercel/
+next-env.d.ts
+
+# -----------------------------------------------------------------------------
+# Go build and test output
+# -----------------------------------------------------------------------------
+/bin/
+apps/worker/bin/
+*.test
+coverage*.out
+*.coverprofile
+*.prof
+*.pprof
+
+# -----------------------------------------------------------------------------
+# Tests, coverage, benchmarks, and generated reports
+# -----------------------------------------------------------------------------
+coverage/
+test-results/
+playwright-report/
+blob-report/
+junit*.xml
+benchmarks/results/
+tests/artifacts/
+tests/fixtures/generated/
+k6-results/
+k6-summary.*
+
+# -----------------------------------------------------------------------------
+# Runtime logs, process files, and diagnostic output
+# -----------------------------------------------------------------------------
+logs/
+*.log
+*.log.*
+*.pid
+*.pid.lock
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# -----------------------------------------------------------------------------
+# Environment files and local secrets
+# -----------------------------------------------------------------------------
+.env
+.env.*
+.envrc
+.direnv/
+!.env.example
+!**/.env.example
+!.env.*.example
+!**/.env.*.example
+
+secrets/
+.secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+
+# -----------------------------------------------------------------------------
+# Local databases, queues, object storage, and observability data
+# -----------------------------------------------------------------------------
+.data/
+.docker-data/
+.volumes/
+postgres-data/
+kafka-data/
+redis-data/
+minio-data/
+prometheus-data/
+grafana-data/
+
+# -----------------------------------------------------------------------------
+# Temporary upload, transcoding, FFmpeg, and HLS artifacts
+# -----------------------------------------------------------------------------
+/tmp/
+/temp/
+/uploads/
+/transcoded/
+/hls/
+*.part
+*.tmp
+
+# -----------------------------------------------------------------------------
+# Terraform local state, plans, and sensitive variable files
+# -----------------------------------------------------------------------------
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+!*.tfvars.json.example
+
+# Keep provider selections committed for reproducible Terraform runs.
+!.terraform.lock.hcl
+!**/.terraform.lock.hcl
+
+# -----------------------------------------------------------------------------
+# Local container and Kubernetes tooling
+# -----------------------------------------------------------------------------
+.docker/
+.kube/
+.minikube/
+docker-compose.override.yml
+docker-compose.override.yaml
+*.local.yml
+*.local.yaml
+
+# -----------------------------------------------------------------------------
+# Editors and operating systems
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
