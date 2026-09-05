@@ -3,6 +3,7 @@ import { createApp } from "./app.js";
 import { loggerConfig } from "@transflow/logger";
 import router from "./routes/index.js";
 import healthRoute from "./health/health.routes.js";
+import {closeDatabase}  from "@transflow/db"
 
 const PORT = env.PORT;
 const app = createApp(router, healthRoute);
@@ -20,8 +21,13 @@ const shutdown = (signal: "SIGTERM" | "SIGINT") => {
   const force = setTimeout(() => process.exit(1), 10_000);
 
   server.close(async () => {
-    clearTimeout(force);
-    process.exit(0);
+    try {
+      await closeDatabase();
+    }
+    finally {
+      clearTimeout(force);
+      process.exit(0);
+    }
   })
 }
 

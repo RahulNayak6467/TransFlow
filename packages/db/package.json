@@ -13,6 +13,20 @@
   },
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "migrate": "node-pg-migrate up --migrations-dir migrations --migrations-table schema_migrations --envPath ../../apps/api/.env",
+    "migrate:create": "node-pg-migrate create --migrations-dir migrations --migration-file-language sql --migration-filename-format utc",
+    "migrate:dry-run": "node-pg-migrate up --migrations-dir migrations --migrations-table schema_migrations --envPath ../../apps/api/.env --dry-run",
+    "migrate:down": "node-pg-migrate down --migrations-dir migrations --migrations-table schema_migrations --envPath ../../apps/api/.env",
+    "migrate:redo": "node-pg-migrate redo --migrations-dir migrations --migrations-table schema_migrations --envPath ../../apps/api/.env"
+  },
+  "dependencies": {
+    "@transflow/config": "workspace:*",
+    "@transflow/logger": "workspace:*",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.23.1",
+    "node-pg-migrate": "^9.0.0"
   }
 }

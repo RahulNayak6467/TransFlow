@@ -9,9 +9,9 @@ export const createApp = (router: express.Router, healthRoutes: express.Router) 
 
   app.use(helmet());
   app.use(httpLogger);
+  app.use("/health", healthRoutes);
   app.use(express.json({limit: "100kb"}));
   app.disable('x-powered-by');
-  app.use("/health", healthRoutes);
   app.use("/api/v1", router);
   app.use(notFoundMiddleware);
   app.use(handleError);

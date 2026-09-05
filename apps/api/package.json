@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@transflow/config": "workspace:*",
+    "@transflow/db": "workspace:*",
     "@transflow/logger": "workspace:*",
     "express": "^5.2.1",
     "helmet": "^8.3.0",

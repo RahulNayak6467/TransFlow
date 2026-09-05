@@ -289,8 +289,8 @@ start application
 - DB health helper
 - raw SQL migration mechanism
 - migration concurrency guard so two processes cannot apply the same migration simultaneously
-- `/health/live`
-- `/health/ready`
+- `/health/live` in Phase 0C
+- `/health/ready` with PostgreSQL dependency checking in Phase 0D
 - centralized error middleware
 - 404 middleware
 - consistent JSON error shape
